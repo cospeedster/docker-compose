@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  iobroker:
+    restart: always
+    image: buanet/iobroker:latest
+    container_name: iobroker
+    hostname: iobroker
+    ports:
+      # WEB UI
+      - 8081:8081
+      # MQTT
+      - 18830:1883
+    volumes:
+      - ./iobrokerdata:/opt/iobroker
