@@ -12,4 +12,4 @@ services:
       # MQTT
       - 18830:1883
     volumes:
-      - ./iobrokerdata:/opt/iobroker
+      - ./data:/opt/iobroker
