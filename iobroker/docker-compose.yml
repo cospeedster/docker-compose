@@ -6,6 +6,11 @@ services:
     image: buanet/iobroker:latest
     container_name: iobroker
     hostname: iobroker
+    environment:
+      - SETUID=1000
+      - SETGID=1000
+      - TZ=Europe/Berlin
+      - IOB_ADMINPORT=8081
     ports:
       # WEB UI
       - 8081:8081
