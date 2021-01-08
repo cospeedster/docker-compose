@@ -8,8 +8,10 @@ services:
       - PGID=1000
       - TZ=Europe/Berlin
     volumes:
-      - ./config:/config
+      - heimdall_config:/config
     ports:
       - 8888:80
       - 4444:443
     restart: unless-stopped
+volumes:
+  heimdall_config:
