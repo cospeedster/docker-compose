@@ -1,7 +1,6 @@
 version: '2.4'
 services:
   iobroker:
-    restart: always
     image: buanet/iobroker:latest
     container_name: iobroker
     hostname: iobroker
@@ -17,5 +16,6 @@ services:
       - 18830:1883
     volumes:
       - iobroker_config:/opt/iobroker
+    restart: unless-stopped
 volumes:
   iobroker_config:
