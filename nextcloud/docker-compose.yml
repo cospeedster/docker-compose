@@ -18,7 +18,7 @@ services:
       - MYSQL_DATABASE="${MDB_DB_NAME}"
     networks:
       - nc_network
-    restart: always
+    restart: unless-stopped
 
   redis:
     image: redis
@@ -27,7 +27,7 @@ services:
       - nc_network
     depends_on:
       - db
-    restart: always
+    restart: unless-stopped
 
   nextcloud:
     image: nextcloud
@@ -51,4 +51,4 @@ services:
       - MYSQL_HOST=db
       - REDIS_HOST=redis
       - REDIS_HOST_PORT="${REDIS_PORT}"
-    restart: always
+    restart: unless-stopped
