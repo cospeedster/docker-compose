@@ -1,5 +1,4 @@
-version: '2'
-
+version: '2.4'
 services:
   iobroker:
     restart: always
@@ -17,4 +16,6 @@ services:
       # MQTT
       - 18830:1883
     volumes:
-      - ./data:/opt/iobroker
+      - iobroker_config:/opt/iobroker
+volumes:
+  iobroker_config:
