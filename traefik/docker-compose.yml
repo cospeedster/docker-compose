@@ -1,0 +1,15 @@
+version: '2.4'
+services:
+  traefik:
+    image: traefik:latest
+    container_name: traefik
+    hostname: traefik
+    environment:
+      - TZ=Europe/Berlin
+    ports:
+      - 80:80
+      - 8080:8080
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - traefik.yml:/etc/traefik/traefik.yml
+    restart: unless-stopped
