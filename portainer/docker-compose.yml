@@ -2,6 +2,7 @@ version: '2.4'
 services:
   portainer:
     container_name: portainer
+    hostname: portainer
     image: portainer/portainer-ce
     restart: unless-stopped
     ports:
